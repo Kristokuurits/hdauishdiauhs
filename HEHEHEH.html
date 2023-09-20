@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veebileht</title>
+    
+    <style>
+        body.dark {
+            background-color: rgb(68, 68, 68);
+            color: rgb(192, 192, 192);
+            font-family: Arial, sans-serif;
+        }
+        body.light {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-family: Times New Roman, serif;
+        }
+        button {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="dark">
+
+    <div class="container mt-5">
+        <h1>Minu Veebileht</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec metus in lacus blandit feugiat.</p>
+        <button id="themeToggleBtn" class="btn btn-dark">Muuda teemat</button>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                themeToggleBtn.textContent = 'Muuda teema mustaks';
+            } else {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                themeToggleBtn.textContent = 'Muuda teema valgeks';
+            }
+        });
+    </script>
+</body>
+</html>
